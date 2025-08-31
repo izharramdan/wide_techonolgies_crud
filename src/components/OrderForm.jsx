@@ -28,34 +28,38 @@ function OrderForm({ order, onSave, onCancel }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-md animate-fade-in">
       <form
         onSubmit={handleSubmit}
-        className="relative max-w-xl w-full mx-4 border border-blue-200 p-7 rounded-2xl bg-white shadow-2xl space-y-5 transition-all duration-300 animate-fade-in"
+        className="relative max-w-xl w-full mx-4 border border-blue-200 p-8 rounded-3xl bg-gradient-to-br from-white via-blue-50 to-blue-100 shadow-2xl space-y-6 transition-all duration-300 animate-fade-in"
       >
         {/* Tombol close pojok kanan atas */}
         <button
           type="button"
           onClick={onCancel}
-          className="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-2xl font-bold focus:outline-none"
+          className="absolute top-4 right-4 text-gray-400 hover:text-red-500 text-3xl font-bold focus:outline-none transition-colors duration-150"
           aria-label="Tutup"
         >
           &times;
         </button>
 
-        <label className="block">
-          <span className="font-medium">Tanggal Order:</span>
+        <h2 className="text-2xl font-bold text-blue-700 mb-2 text-center tracking-wide">
+          Form Order
+        </h2>
+
+        <label className="block mb-3">
+          <span className="font-medium text-blue-800">Tanggal Order:</span>
           <input
             type="date"
             value={localOrder.date}
             onChange={(e) =>
               setLocalOrder({ ...localOrder, date: e.target.value })
             }
-            className="border px-3 py-1 rounded ml-2"
+            className="border border-blue-200 px-4 py-2 rounded-lg ml-2 focus:ring-2 focus:ring-blue-300 outline-none transition-all"
           />
         </label>
 
-        <h3 className="font-semibold">Items</h3>
+        <h3 className="font-semibold text-blue-700 mb-1">Items</h3>
         <div className="space-y-2">
           {localOrder.items.map((item, idx) => (
             <OrderItemRow
@@ -72,22 +76,22 @@ function OrderForm({ order, onSave, onCancel }) {
         <button
           type="button"
           onClick={handleAddItem}
-          className="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600"
+          className="bg-gradient-to-r from-green-400 to-green-500 text-white px-4 py-2 rounded-lg shadow hover:from-green-500 hover:to-green-600 font-semibold transition-all duration-150"
         >
           + Tambah Item
         </button>
 
-        <div className="flex gap-2 pt-3">
+        <div className="flex gap-3 pt-4 justify-end">
           <button
             type="submit"
-            className="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700"
+            className="bg-gradient-to-r from-blue-600 to-blue-400 text-white px-6 py-2 rounded-xl shadow hover:from-blue-700 hover:to-blue-500 font-bold transition-all duration-150"
           >
             Simpan
           </button>
           <button
             type="button"
             onClick={onCancel}
-            className="bg-gray-400 text-white px-4 py-1 rounded hover:bg-gray-500"
+            className="bg-gray-300 text-gray-700 px-6 py-2 rounded-xl shadow hover:bg-gray-400 font-semibold transition-all duration-150"
           >
             Batal
           </button>

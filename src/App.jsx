@@ -36,16 +36,20 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100">
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-white to-blue-300 rounded-4xl">
       <div className="p-6 max-w-3xl mx-auto">
         <h1 className="text-2xl font-bold mb-4 flex flex-col items-center">
           <img
             src={Logo}
             alt="Wide Technologies Logo"
-            className="mx-auto mb-4 h-20 w-auto drop-shadow-lg animate-fade-in"
+            className="mx-auto mb-4 h-24 w-auto drop-shadow-xl animate-fade-in"
+            style={{ filter: "brightness(1.1)" }}
           />
-          <span className="text-blue-700 animate-fade-in font-extrabold tracking-wide text-3xl mb-2">
+          <span className="text-blue-800 animate-fade-in font-extrabold tracking-wide text-3xl mb-2 drop-shadow-sm">
             Order Management
+          </span>
+          <span className="text-gray-500 text-base font-medium animate-fade-in-slow mb-2">
+            Kelola pesanan dengan mudah dan cepat 🚀
           </span>
         </h1>
 
@@ -59,18 +63,18 @@ function App() {
           <>
             <button
               onClick={handleAddOrder}
-              className="bg-gradient-to-r from-blue-600 to-blue-400 text-white px-6 py-3 rounded-xl shadow-lg mb-6 font-semibold text-lg transition-all duration-200 hover:scale-105 hover:from-blue-700 hover:to-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              className="bg-gradient-to-r from-blue-600 to-blue-400 text-white px-8 py-3 rounded-2xl shadow-xl mb-8 font-bold text-lg transition-all duration-200 hover:scale-105 hover:from-blue-700 hover:to-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-200 active:scale-95"
             >
-              + Tambah Order
+              <span className="mr-2 text-2xl align-middle">＋</span> Tambah Order
             </button>
 
-            
-             
+            <div className="animate-fade-in-slow">
               <OrderList
                 orders={orders}
                 onEdit={setEditingOrder}
                 onDelete={handleDeleteOrder}
               />
+            </div>
           </>
         )}
       </div>
