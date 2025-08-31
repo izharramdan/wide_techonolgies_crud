@@ -3,13 +3,9 @@ function OrderList({ orders, onEdit, onDelete }) {
     <div className="space-y-5">
       {orders.length === 0 && (
         <div className="flex flex-col items-center py-12 animate-fade-in-slow">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/4076/4076549.png"
-            alt="No orders"
-            className="w-24 h-24 mb-3 opacity-80"
-          />
+          
           <p className="text-gray-500 text-lg font-medium">
-            Belum ada order. Yuk, tambah pesanan!
+            Belum ada order
           </p>
         </div>
       )}
