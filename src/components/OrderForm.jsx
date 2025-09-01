@@ -33,7 +33,6 @@ function OrderForm({ order, onSave, onCancel }) {
         onSubmit={handleSubmit}
         className="relative max-w-xl w-full mx-4 border border-blue-200 p-8 rounded-3xl bg-gradient-to-br from-white via-blue-50 to-blue-100 shadow-2xl space-y-6 transition-all duration-300 animate-fade-in"
       >
-        {/* Tombol close pojok kanan atas */}
         <button
           type="button"
           onClick={onCancel}

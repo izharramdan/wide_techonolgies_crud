@@ -1,7 +1,6 @@
 function OrderList({ orders, onEdit, onDelete }) {
   return (
     <div className="space-y-6">
-      {/* Jika belum ada order */}
       {orders.length === 0 && (
         <div className="flex flex-col items-center py-16 animate-fade-in">
           <p className="text-gray-400 text-xl font-medium">
@@ -10,13 +9,11 @@ function OrderList({ orders, onEdit, onDelete }) {
         </div>
       )}
 
-      {/* List Order */}
       {orders.map((order) => (
         <div
           key={order.id}
           className="border border-gray-200 p-6 rounded-2xl shadow-md bg-white hover:shadow-lg transition-all duration-200 animate-fade-in"
         >
-          {/* Header */}
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-lg font-bold text-blue-700">
               Tanggal: <span className="text-gray-800">{order.date}</span>
@@ -37,7 +34,6 @@ function OrderList({ orders, onEdit, onDelete }) {
             </div>
           </div>
 
-          {/* Items */}
           <ul className="space-y-2 pl-5">
             {order.items.map((item, idx) => (
               <li
@@ -56,8 +52,6 @@ function OrderList({ orders, onEdit, onDelete }) {
               </li>
             ))}
           </ul>
-
-          {/* Total */}
           <div className="mt-4 pt-4 border-t border-gray-200 flex justify-between text-lg font-bold text-blue-800">
             <span>Total:</span>
             <span>
